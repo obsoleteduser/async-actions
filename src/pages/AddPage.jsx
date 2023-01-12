@@ -17,15 +17,15 @@ export const AddPage = () => {
 
 
   const compNameHandler = event => {
-      setCompName(event.targer.value)
+      setCompName(event.target.value)
   }
 
   const contNameHandler = event => {
-    setContName(event.targer.value)
+    setContName(event.target.value)
   }
 
   const contTitleHandler = event => {
-    setContTitle(event.targer.value)
+    setContTitle(event.target.value)
   }
 
   const send = async () =>{
