@@ -15,7 +15,7 @@ export const Customers = () => {
   }, [trigger])
 
 
-  const deleteHandler = async (event)=>{
+  const deleteHandler = async event =>{
     console.log(event.target.id)
       await fetch(`https://northwind.vercel.app/api/customers/${event.target.id}`, {
         method: 'DELETE'
