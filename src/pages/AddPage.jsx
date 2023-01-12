@@ -8,9 +8,9 @@ import { useNavigate } from 'react-router-dom'
 
 export const AddPage = () => {
 
-  const [compName, setCompName] = useState()
-  const [contName, setContName] = useState()
-  const [contTitle, setContTitle] = useState()
+  const [compName, setCompName] = useState('')
+  const [contName, setContName] = useState('')
+  const [contTitle, setContTitle] = useState('')
   const trigger = useSelector(state => state?.trigger)
   const dispatch = useDispatch()
   const navigate = useNavigate()
@@ -52,9 +52,9 @@ export const AddPage = () => {
     <div className='AddPage'>
         <div className="add-form">
             <h1>Add Post</h1>
-            <input onInput={compNameHandler} placeholder='Company name' type="text" className="company-name" />
-            <input onInput={contTitleHandler} placeholder='Contact title' type="text" className="contact-title" />
-            <input onInput={contNameHandler} placeholder='Contact name' type="text" className="contact-name" />
+            <input onChange={compNameHandler} placeholder='Company name' type="text" className="company-name" />
+            <input onChange={contTitleHandler} placeholder='Contact title' type="text" className="contact-title" />
+            <input onChange={contNameHandler} placeholder='Contact name' type="text" className="contact-name" />
             <button onClick={send} className="add-customer">Add Customer</button>
         </div>
     </div>
