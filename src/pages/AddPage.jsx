@@ -3,6 +3,11 @@ import './AddPage.jsx'
 import './AddPage.css'
 
 export const AddPage = () => {
+
+
+
+
+
   return (
     <div className='AddPage'>
         <div className="add-form">

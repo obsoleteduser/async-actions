@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { getData } from '../redux/actionCreators'
+import { getData, trig } from '../redux/actionCreators'
 import { PuffLoader } from 'react-spinners'
 import './Customers.css'
 
 export const Customers = () => {
   const dispatch = useDispatch()
   const data = useSelector(state => state?.posts)
-  const [toggle, switcher] = useState(false)
+  const trigger = useSelector(state => state?.trigger)
 
 
   useEffect(() => {
     dispatch(getData())
-  }, [toggle])
+  }, [trigger])
 
 
   const deleteHandler = async (event)=>{
@@ -20,7 +20,7 @@ export const Customers = () => {
       await fetch(`https://northwind.vercel.app/api/customers/${event.target.id}`, {
         method: 'DELETE'
       })
-      switcher(!toggle)
+      dispatch(trig())
   }
 
   return (

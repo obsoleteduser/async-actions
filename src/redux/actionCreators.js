@@ -7,3 +7,7 @@ export const getData = () =>{
         .then(data => dispatch({type: GET_DATA, payload: data}))
     }
 }
+
+export const trig = () =>{
+    return {type: 'TRIG', payload: null}
+}
