@@ -7,15 +7,20 @@ import './Customers.css'
 export const Customers = () => {
   const dispatch = useDispatch()
   const data = useSelector(state => state?.posts)
+  const [toggle, switcher] = useState(false)
 
 
   useEffect(() => {
     dispatch(getData())
-  }, [])
+  }, [toggle])
 
 
-  const deleteHandler = ()=>{
-
+  const deleteHandler = async (event)=>{
+    console.log(event.target.id)
+      await fetch(`https://northwind.vercel.app/api/customers/${event.target.id}`, {
+        method: 'DELETE'
+      })
+      switcher(!toggle)
   }
 
   return (
@@ -38,7 +43,7 @@ export const Customers = () => {
                 <td>{item.contactTitle}</td>
                 <td>{item.contactName}</td>
                 <td>{item.companyName}</td>
-                <td><button>Delete</button></td>
+                <td><button onClick={deleteHandler} id={item.id}>Delete</button></td>
               </tr>
             ))}
           </tbody>
