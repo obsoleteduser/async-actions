@@ -1,0 +1,29 @@
+.customers{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+table{
+    padding: 1rem;
+    background-color: white;
+    text-align: center;
+    width: 100%;
+}
+
+
+tr, td{
+    font-weight: 600;
+    padding: 1rem;
+    font-size: 1.5rem !important;
+}
+
+
+table button{
+    padding: 1rem;
+    border: none;
+    background-color: red;
+    color: white;
+    border-radius: 10px;
+}
