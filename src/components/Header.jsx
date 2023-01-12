@@ -7,7 +7,7 @@ export const Header = () => {
     <div className='Header'>
         <Link className='link' to='/'>Customers</Link>
         <Link className='link' to='/add'>Add Customer</Link>
-        <Link className='src-code' to='https://github.com/tahirdibirovresearch/async-actions'>Source Code</Link>
+        <a className='src-code' href='https://github.com/tahirdibirovresearch/async-actions' target='_blank'>Source Code</a>
     </div>
   )
 }
